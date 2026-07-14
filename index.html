@@ -171,8 +171,18 @@
       animation: fadeUp 0.4s ease both;
     }
     .waitlist-count {
-      font-size: 12px; color: rgba(255,255,255,0.5);
+      font-size: 12px; color: var(--primary); font-weight: 600;
       margin-top: 10px;
+    }
+    .waitlist-progress-wrap { margin-top: 12px; }
+    .waitlist-progress {
+      width: 100%; height: 6px; border-radius: 50px;
+      background: rgba(255,255,255,0.1); overflow: hidden;
+    }
+    .waitlist-progress-bar {
+      height: 100%; width: 0%; border-radius: 50px;
+      background: linear-gradient(90deg, var(--primary), #66c8ff);
+      transition: width 0.8s ease;
     }
 
     /* ── STATS ── */
@@ -458,7 +468,7 @@
     <div class="hero-content">
       <div class="founding-banner">
         <div class="founding-eyebrow">Founding Member Pricing — First 200 Only</div>
-        <div class="founding-price">30 days free, then <strong>$6.49/month</strong> <span style="color:rgba(255,255,255,0.5);text-decoration:line-through;font-weight:400;">$12.99</span></div>
+        <div class="founding-price">30 days free, then <strong>$6.49/month</strong> <span style="color:rgba(255,255,255,0.5);text-decoration:line-through;font-weight:400;">$12.99</span> — locked in for life</div>
       </div>
       <h1>The Personal Trainer You Can<br/><span class="accent">Actually Afford</span></h1>
       <p class="hero-sub">
@@ -474,7 +484,10 @@
           <button type="submit">Join Waitlist</button>
         </form>
         <p class="form-note">No spam. Ever. Unsubscribe anytime.</p>
-        <p class="waitlist-count" id="waitlist-count-msg" style="display:none;"></p>
+        <div class="waitlist-progress-wrap" id="waitlist-progress-wrap" style="display:none;">
+          <div class="waitlist-progress"><div class="waitlist-progress-bar" id="waitlist-progress-bar"></div></div>
+          <p class="waitlist-count" id="waitlist-count-msg"></p>
+        </div>
         <p class="success-msg" id="success-msg"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" style="vertical-align:-2px;margin-right:5px"><polyline points="20 6 9 17 4 12"/></svg>You're on the list! We'll notify you at launch.</p>
       </div>
 
@@ -871,6 +884,17 @@
   </footer>
 
   <script>
+    // ── Waitlist progress (200 founding-member spots) ──────────────────────────
+    const FOUNDING_SPOTS = 200;
+    function renderWaitlistCount(count) {
+      const wrap = document.getElementById('waitlist-progress-wrap');
+      const countEl = document.getElementById('waitlist-count-msg');
+      const bar = document.getElementById('waitlist-progress-bar');
+      countEl.textContent = count.toLocaleString() + (count === 1 ? ' person has' : ' people have') + ' already joined the waitlist';
+      bar.style.width = Math.min(100, (count / FOUNDING_SPOTS) * 100) + '%';
+      wrap.style.display = 'block';
+    }
+
     // ── Hero waitlist form ──────────────────────────────────────────────────
     function handleSignup(e) {
       e.preventDefault();
@@ -891,9 +915,7 @@
           const countEl = document.getElementById('waitlist-count-msg');
           const match = countEl.textContent.match(/^([\d,]+)/);
           if (match) {
-            const next = parseInt(match[1].replace(/,/g, ''), 10) + 1;
-            countEl.textContent = next.toLocaleString() + (next === 1 ? ' person has' : ' people have') + ' already joined the waitlist';
-            countEl.style.display = 'block';
+            renderWaitlistCount(parseInt(match[1].replace(/,/g, ''), 10) + 1);
           }
         })
         .catch(() => {
@@ -1005,11 +1027,7 @@
     fetch('/.netlify/functions/waitlist-count')
       .then(res => { if (!res.ok) throw new Error('bad response'); return res.json(); })
       .then(data => {
-        if (typeof data.count === 'number') {
-          const el = document.getElementById('waitlist-count-msg');
-          el.textContent = data.count.toLocaleString() + (data.count === 1 ? ' person has' : ' people have') + ' already joined the waitlist';
-          el.style.display = 'block';
-        }
+        if (typeof data.count === 'number') renderWaitlistCount(data.count);
       })
       .catch(() => {});
 
