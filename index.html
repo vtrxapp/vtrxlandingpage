@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="VTRX — AI coaching for strength training, HIIT, and nutrition. 30 days free. Founding member pricing for our first 200 members. Join the waitlist."/>
+  <title>VTRX — Unleash Your Potential</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 85'%3E%3Cpolygon points='50,28 72,0 100,0 50,60 0,0 28,0' fill='%2300A3FF'/%3E%3Cpolygon points='50,55 65,35 80,35 50,75 20,35 35,35' fill='%2300A3FF' opacity='0.6'/%3E%3C/svg%3E"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="VTRX — AI-Powered Fitness Coaching"/>
+  <meta property="og:description" content="AI coaching for strength training, HIIT, and nutrition. 30 days free. Founding member pricing for our first 200 members."/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="VTRX — AI-Powered Fitness Coaching"/>
+  <meta name="twitter:description" content="AI coaching for strength training, HIIT, and nutrition. 30 days free. Founding member pricing for our first 200 members."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #00A3FF;
+      --bg: #0a0a0a;
+      --card: #141414;
+      --border: #1e1e1e;
+      --text: #ffffff;
+      --sub: #888888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo span { font-size: 22px; font-weight: 900; color: var(--primary); letter-spacing: 4px; }
+    .nav-cta {
+      background: var(--primary); color: #fff;
+      padding: 10px 24px; border-radius: 50px;
+      font-size: 13px; font-weight: 700; letter-spacing: 1px;
+      border: none; cursor: pointer; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-demo {
+      background: transparent; color: #fff;
+      padding: 9px 20px; border-radius: 50px;
+      font-size: 13px; font-weight: 700; letter-spacing: 1px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      cursor: pointer; text-decoration: none;
+      transition: border-color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-demo:hover { border-color: var(--primary); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80');
+      background-size: cover; background-position: center;
+      filter: brightness(0.18);
+      transform: scale(1.05);
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    @keyframes slowZoom {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.12); }
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(0,163,255,0.12) 0%, transparent 70%);
+    }
+    .hero-content { position: relative; max-width: 720px; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(0,163,255,0.15);
+      border: 1px solid rgba(0,163,255,0.4);
+      color: var(--primary); font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; padding: 6px 16px; border-radius: 50px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .founding-banner {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(0,163,255,0.18), rgba(0,90,200,0.18));
+      border: 1px solid rgba(0,163,255,0.35);
+      border-radius: 16px; padding: 14px 28px;
+      margin-bottom: 28px; text-align: center;
+      animation: fadeUp 0.6s ease both;
+    }
+    .founding-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      color: var(--primary); text-transform: uppercase; margin-bottom: 6px;
+    }
+    .founding-price { font-size: 14px; font-weight: 700; color: #fff; }
+    .founding-price strong { color: var(--primary); }
+
+    h1 {
+      font-size: clamp(36px, 8vw, 72px);
+      font-weight: 900; line-height: 1.08;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+    h1 .accent { color: var(--primary); }
+
+    .hero-sub {
+      font-size: clamp(15px, 2.5vw, 19px);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65; max-width: 520px; margin: 0 auto 40px;
+      animation: fadeUp 0.6s ease 0.2s both;
+    }
+
+    /* ── EMAIL FORM ── */
+    .waitlist-form {
+      display: flex; gap: 10px; max-width: 460px; width: 100%; margin: 0 auto 16px;
+      animation: fadeUp 0.6s ease 0.3s both;
+    }
+    .waitlist-form input {
+      flex: 1; background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      border-radius: 50px; padding: 15px 22px;
+      color: #fff; font-family: 'Montserrat', sans-serif;
+      font-size: 14px; outline: none; transition: border-color 0.2s;
+    }
+    .waitlist-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .waitlist-form input:focus { border-color: var(--primary); }
+    .waitlist-form button {
+      background: var(--primary); color: #fff;
+      border: none; border-radius: 50px;
+      padding: 16px 32px; font-family: 'Montserrat', sans-serif;
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      white-space: nowrap; letter-spacing: 0.5px;
+      box-shadow: 0 4px 24px rgba(0,163,255,0.4);
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .waitlist-form button:hover { opacity: 0.9; transform: translateY(-1px); }
+    .waitlist-form button:active { transform: translateY(0); }
+    .waitlist-form button:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+    .form-note {
+      font-size: 12px; color: rgba(255,255,255,0.35);
+      animation: fadeUp 0.6s ease 0.4s both;
+    }
+    .success-msg {
+      display: none; color: #22C55E; font-size: 14px;
+      font-weight: 600; margin-top: 12px;
+      animation: fadeUp 0.4s ease both;
+    }
+    .waitlist-count {
+      font-size: 12px; color: rgba(255,255,255,0.5);
+      margin-top: 10px;
+    }
+
+    /* ── STATS ── */
+    .stats {
+      display: flex; gap: 40px; justify-content: center;
+      margin-top: 60px; flex-wrap: wrap;
+      animation: fadeUp 0.6s ease 0.5s both;
+    }
+    .stat { text-align: center; max-width: 140px; }
+    .stat-icon { display: flex; justify-content: center; margin-bottom: 8px; }
+    .stat-label { font-size: 11px; color: var(--sub); letter-spacing: 1px; margin-top: 4px; }
+
+    /* ── HOW IT WORKS ── */
+    section { padding: 100px 24px; }
+    .section-label {
+      text-align: center; font-size: 11px; font-weight: 700;
+      color: var(--primary); letter-spacing: 3px; margin-bottom: 16px;
+    }
+    h2 {
+      text-align: center; font-size: clamp(28px, 5vw, 44px);
+      font-weight: 900; margin-bottom: 16px;
+    }
+    .section-sub {
+      text-align: center; color: var(--sub); font-size: 16px;
+      max-width: 500px; margin: 0 auto 60px; line-height: 1.6;
+    }
+
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px; max-width: 1000px; margin: 0 auto;
+    }
+    .step {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px 28px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .step:hover { border-color: rgba(0,163,255,0.4); transform: translateY(-4px); }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(0,163,255,0.15); border: 1.5px solid rgba(0,163,255,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 900; color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .step h3 { font-size: 17px; font-weight: 800; margin-bottom: 10px; }
+    .step p  { font-size: 14px; color: var(--sub); line-height: 1.65; }
+
+    /* ── FEATURES ── */
+    .features-bg { background: #0d0d0d; }
+    .features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px; max-width: 1000px; margin: 0 auto;
+    }
+    .feature {
+      display: flex; gap: 18px; align-items: flex-start;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px;
+      transition: border-color 0.3s;
+    }
+    .feature:hover { border-color: rgba(0,163,255,0.3); }
+    .feature-icon {
+      width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature h3 { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
+    .feature p  { font-size: 13px; color: var(--sub); line-height: 1.55; }
+
+
+
+    /* ── WHY VTRX ── */
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px; max-width: 900px; margin: 0 auto;
+    }
+    .why-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px 28px; text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .why-card:hover { border-color: rgba(0,163,255,0.4); transform: translateY(-4px); }
+    .why-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(0,163,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .why-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 10px; }
+    .why-card p { font-size: 14px; color: var(--sub); line-height: 1.65; }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+    .faq-item p { font-size: 14px; color: var(--sub); line-height: 1.6; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      text-align: center; max-width: 600px; margin: 0 auto;
+    }
+    .final-cta h2 { margin-bottom: 20px; }
+    .final-cta p { color: var(--sub); font-size: 16px; line-height: 1.6; margin-bottom: 40px; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--primary); color: #fff;
+      padding: 16px 36px; border-radius: 50px;
+      font-size: 15px; font-weight: 800; letter-spacing: 1px;
+      border: none; cursor: pointer; text-decoration: none;
+      box-shadow: 0 4px 28px rgba(0,163,255,0.4);
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent; color: #fff;
+      padding: 16px 36px; border-radius: 50px;
+      font-size: 15px; font-weight: 700;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      cursor: pointer; text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--primary); transform: translateY(-2px); }
+
+    /* ── FEEDBACK SECTION ── */
+    .feedback-section { background: #0d0d0d; }
+    .tabs {
+      display: flex; gap: 0; max-width: 600px; margin: 0 auto 40px;
+      background: var(--card); border-radius: 14px; padding: 4px;
+      border: 1px solid var(--border);
+    }
+    .tab-btn {
+      flex: 1; padding: 12px 0; border: none; background: transparent;
+      color: var(--sub); font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      border-radius: 10px; transition: all 0.2s; letter-spacing: 0.5px;
+    }
+    .tab-btn.active { background: var(--primary); color: #fff; }
+
+    .form-card {
+      max-width: 600px; margin: 0 auto;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 24px; padding: 40px;
+      display: none;
+    }
+    .form-card.active { display: block; }
+    .form-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .form-card .sub { font-size: 14px; color: var(--sub); margin-bottom: 28px; line-height: 1.5; }
+
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 12px; font-weight: 700; color: var(--sub); letter-spacing: 1px; margin-bottom: 8px; }
+    .field input, .field textarea, .field select {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1.5px solid var(--border); border-radius: 12px;
+      padding: 14px 16px; color: #fff;
+      font-family: 'Montserrat', sans-serif; font-size: 14px;
+      outline: none; transition: border-color 0.2s;
+      appearance: none;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--primary); }
+    .field textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+    .field select option { background: #1a1a1a; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .rating-row { display: flex; gap: 8px; margin-top: 4px; }
+    .rating-btn {
+      flex: 1; padding: 10px 0; border: 1.5px solid var(--border);
+      border-radius: 10px; background: transparent; color: var(--sub);
+      font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; text-align: center;
+    }
+    .rating-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .rating-btn.selected { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    .checkbox-group { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+    .checkbox-item {
+      display: flex; align-items: center; gap: 12px; cursor: pointer;
+      padding: 10px 16px; border-radius: 10px; border: 1.5px solid var(--border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .checkbox-item:hover { border-color: rgba(0,163,255,0.4); }
+    .checkbox-item.selected { border-color: var(--primary); background: rgba(0,163,255,0.08); }
+    /* The generic ".field input" rule above (for text/email/etc.) strips
+       appearance for every input in a .field, including these checkboxes,
+       which otherwise leaves them rendering blank with no checkmark. Reset
+       everything it bled through and let the browser draw a real checkbox. */
+    .checkbox-item input[type="checkbox"] {
+      appearance: auto; -webkit-appearance: auto;
+      width: 18px; height: 18px; flex-shrink: 0;
+      padding: 0; margin: 0; background: none; border: none; border-radius: 0;
+      accent-color: var(--primary); cursor: pointer;
+    }
+    .checkbox-icon {
+      width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+      background: rgba(0,163,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .checkbox-item span.label-text { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+    .submit-btn {
+      width: 100%; padding: 16px; border-radius: 50px;
+      background: var(--primary); color: #fff; border: none;
+      font-family: 'Montserrat', sans-serif; font-size: 15px;
+      font-weight: 800; cursor: pointer; margin-top: 8px;
+      box-shadow: 0 4px 24px rgba(0,163,255,0.35);
+      transition: opacity 0.2s, transform 0.15s; letter-spacing: 0.5px;
+    }
+    .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .submit-btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+    .form-success {
+      text-align: center; padding: 40px 20px; display: none;
+    }
+    .form-success .check {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(34,197,94,0.15); border: 2px solid #22C55E;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .form-success h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .form-success p { color: var(--sub); font-size: 14px; line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    footer .logo { display: flex; align-items: center; gap: 8px; }
+    footer .logo span { font-size: 16px; font-weight: 900; color: var(--primary); letter-spacing: 3px; }
+    footer p { font-size: 13px; color: var(--sub); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--sub); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--primary); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      nav { padding: 14px 16px; }
+      .nav-logo span { font-size: 16px; letter-spacing: 2px; }
+      .nav-actions { gap: 6px; }
+      .nav-demo, .nav-cta { padding: 8px 14px; font-size: 11px; letter-spacing: 0.5px; }
+      .waitlist-form { flex-direction: column; }
+      .waitlist-form button { width: 100%; }
+      .stats { gap: 28px; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <svg width="28" height="24" viewBox="0 0 100 85" fill="none">
+        <polygon points="50,28 72,0 100,0 50,60 0,0 28,0" fill="#00A3FF"/>
+        <polygon points="50,55 65,35 80,35 50,75 20,35 35,35" fill="#00A3FF" opacity="0.6"/>
+      </svg>
+      <span>VTRX</span>
+    </div>
+    <div class="nav-actions">
+      <a href="https://vtrxapp.vercel.app/?demo=1" target="_blank" class="nav-demo">Try Demo</a>
+      <a href="#waitlist" class="nav-cta" onclick="focusWaitlist(event)">Join Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="founding-banner">
+        <div class="founding-eyebrow">Founding Member Pricing — First 200 Only</div>
+        <div class="founding-price">30 days free, then <strong>$6.49/month</strong> <span style="color:rgba(255,255,255,0.5);text-decoration:line-through;font-weight:400;">$12.99</span></div>
+      </div>
+      <h1>The Personal Trainer You Can<br/><span class="accent">Actually Afford</span></h1>
+      <p class="hero-sub">
+        Get AI coaching for strength training, HIIT, and nutrition —
+        30 days free, then $6.49/month as one of our first 200 founding members.
+      </p>
+
+      <div id="waitlist" style="max-width:480px;margin:0 auto;">
+        <form class="waitlist-form" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSignup(event)">
+          <input type="hidden" name="form-name" value="waitlist"/>
+          <input type="hidden" name="bot-field" style="display:none"/>
+          <input type="email" name="email" id="email-input" placeholder="Enter your email address" autocomplete="email" required/>
+          <button type="submit">Join Waitlist</button>
+        </form>
+        <p class="form-note">No spam. Ever. Unsubscribe anytime.</p>
+        <p class="waitlist-count" id="waitlist-count-msg" style="display:none;"></p>
+        <p class="success-msg" id="success-msg"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="3" style="vertical-align:-2px;margin-right:5px"><polyline points="20 6 9 17 4 12"/></svg>You're on the list! We'll notify you at launch.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="stat-label">AI-POWERED COACHING</div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="#00A3FF"/></svg></div>
+          <div class="stat-label">PERSONALISED DAILY PLANS</div>
+        </div>
+        <div class="stat">
+          <div class="stat-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="16 9 10.5 15 8 12.5"/></svg></div>
+          <div class="stat-label">FREE EARLY ACCESS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <p class="section-label reveal">HOW IT WORKS</p>
+    <h2 class="reveal">Simple. Powerful. Effective.</h2>
+    <p class="section-sub reveal">Four steps between you and a routine that actually sticks.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>Tell Us Your Goals</h3>
+        <p>Quick setup — your goal, fitness level, and how many days a week you can train.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>Get Your AI Plan</h3>
+        <p>VTRX builds a personalised workout and nutrition plan around your profile — not a generic template.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>Train &amp; Log Daily</h3>
+        <p>Follow your plan, log your sessions, and build your streak one day at a time.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h3>Adapt &amp; Improve</h3>
+        <p>Get an AI summary after every workout, and a plan that keeps adjusting as you progress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-bg">
+    <p class="section-label reveal">FEATURES</p>
+    <h2 class="reveal">Everything You Need to Stay Consistent</h2>
+    <p class="section-sub reveal">Built for real people who want real results — not another app collecting dust on your phone.</p>
+    <div class="features">
+      <div class="feature reveal">
+        <div class="feature-icon" style="background:rgba(0,163,255,0.15)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div>
+          <h3>Never Feel Lost at the Gym Again</h3>
+          <p>Personalised daily workouts that adapt to your experience level and energy — no guessing what to do.</p>
+        </div>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon" style="background:rgba(234,179,8,0.15)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <h3>Stay Accountable Without the Guilt</h3>
+          <p>Miss a day? Streak Freeze protects your progress — no judgment, no starting over.</p>
+        </div>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon" style="background:rgba(34,197,94,0.15)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <h3>See Real Results in Real Time</h3>
+          <p>Get a personalised AI summary after every session, so you know what's working and what to focus on next.</p>
+        </div>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon" style="background:rgba(139,92,246,0.15)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div>
+          <h3>Recommendations Built for You</h3>
+          <p>Workouts and meals tailored to your goals, fitness level, and recent activity — not a generic template.</p>
+        </div>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon" style="background:rgba(249,115,22,0.15)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M21 15V2a5 5 0 00-5 5v6c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z"/></svg>
+        </div>
+        <div>
+          <h3>Meal Plans That Actually Taste Good</h3>
+          <p>Daily recipes matched to your goals and macros — swap anytime, never boring.</p>
+        </div>
+      </div>
+      <div class="feature reveal">
+        <div class="feature-icon" style="background:rgba(239,68,68,0.15)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <h3>Watch Your Strength Climb</h3>
+          <p>Weekly AI breakdowns of your progress and trends, with actionable next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- WHY VTRX -->
+  <section class="features-bg">
+    <p class="section-label reveal">WHY VTRX</p>
+    <h2 class="reveal">Built Because Willpower Alone Doesn't Work</h2>
+    <p class="section-sub reveal">Most fitness apps hand you a static plan and hope you stick to it. VTRX is built to adapt to you and keep you accountable, so showing up stops depending on motivation.</p>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Your Plan Adjusts Itself</h3>
+        <p>Tell it how you're feeling in one tap — tired, sore, or ready to go hard — and today's workout adjusts in real time instead of forcing the same plan regardless.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Accountability, Built In</h3>
+        <p>Your streak updates automatically every day you train, with reminders before you're about to break it — so staying consistent doesn't depend on you remembering to check in.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Skip The Spreadsheets</h3>
+        <p>Log your sets in seconds, right in the app. You get an AI summary of how the session went and what to focus on next — no spreadsheet required.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.5 8l-5 5-2.8-2.8L7 13.5"/></svg></div>
+        <h3>We Do The Macro Math</h3>
+        <p>Your calorie and macro targets are calculated for you, with meal suggestions that already hit them — no calculator required.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M4 13a8 8 0 0016 0"/><path d="M4 13h16"/><path d="M12 13V3"/><path d="M8 3c0 2 1.5 3 1.5 5M16 3c0 2-1.5 3-1.5 5"/></svg></div>
+        <h3>Never Wonder What To Cook</h3>
+        <p>Recipe picks matched to your goal, fitness level, and recent workouts — not a generic meal plan everyone on the app gets.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>Try It Before You Commit</h3>
+        <p>Every plan starts with a 30-day free trial — you decide if it's worth paying for, not the other way around.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL + FEEDBACK SECTION -->
+  <section class="feedback-section" id="feedback">
+    <p class="section-label reveal">GET INVOLVED</p>
+    <h2 class="reveal">Join Early. Shape VTRX.</h2>
+    <p class="section-sub reveal">Be part of the founding community. Your feedback directly influences what we build next.</p>
+
+    <!-- Tabs -->
+    <div class="tabs reveal">
+      <button class="tab-btn active" onclick="switchTab('early-access')">Early Access</button>
+      <button class="tab-btn" onclick="switchTab('feedback')">Give Feedback</button>
+    </div>
+
+    <!-- EARLY ACCESS FORM -->
+    <div class="form-card active" id="tab-early-access">
+      <h3>Get Early Access</h3>
+      <p class="sub">Be among the first to use VTRX when we launch. Our first 200 founding members get priority access, $6.49/month founding pricing (regular $12.99/month), and a founding member badge.</p>
+
+      <div id="early-form-content">
+        <form name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitEarlyAccess(event)">
+          <input type="hidden" name="form-name" value="early-access"/>
+          <p style="display:none"><input name="bot-field"/></p>
+          <div class="field-row">
+            <div class="field">
+              <label>FIRST NAME</label>
+              <input type="text" name="first-name" placeholder="John" autocomplete="given-name"/>
+            </div>
+            <div class="field">
+              <label>LAST NAME</label>
+              <input type="text" name="last-name" placeholder="Doe" autocomplete="family-name"/>
+            </div>
+          </div>
+          <div class="field">
+            <label>EMAIL ADDRESS *</label>
+            <input type="email" name="email" placeholder="john@example.com" autocomplete="email" required/>
+          </div>
+          <div class="field">
+            <label>PHONE (OPTIONAL)</label>
+            <input type="tel" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel"/>
+          </div>
+          <div class="field">
+            <label>FITNESS GOAL</label>
+            <select name="goal">
+              <option value="" disabled selected>Select your primary goal</option>
+              <option>Lose weight</option>
+              <option>Build muscle</option>
+              <option>Improve endurance</option>
+              <option>Stay consistent</option>
+              <option>General fitness</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>HOW DID YOU HEAR ABOUT VTRX?</label>
+            <select name="source">
+              <option value="" disabled selected>Select an option</option>
+              <option>Instagram / TikTok</option>
+              <option>Reddit</option>
+              <option>Friend or family</option>
+              <option>Google search</option>
+              <option>Twitter / X</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>WHAT EXCITES YOU MOST ABOUT VTRX?</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="AI personalised plan" onchange="this.closest('.checkbox-item').classList.toggle('selected', this.checked)"/>
+                <span class="checkbox-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="#00A3FF"/></svg></span>
+                <span class="label-text">AI personalised training plan</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="AI personalised workouts" onchange="this.closest('.checkbox-item').classList.toggle('selected', this.checked)"/>
+                <span class="checkbox-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                <span class="label-text">AI personalised workouts</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="Streak and progress tracking" onchange="this.closest('.checkbox-item').classList.toggle('selected', this.checked)"/>
+                <span class="checkbox-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
+                <span class="label-text">Streak and progress tracking</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="Personalised recommendations" onchange="this.closest('.checkbox-item').classList.toggle('selected', this.checked)"/>
+                <span class="checkbox-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></span>
+                <span class="label-text">Personalised recommendations</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="interest" value="Smart nutrition guidance" onchange="this.closest('.checkbox-item').classList.toggle('selected', this.checked)"/>
+                <span class="checkbox-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M21 15V2a5 5 0 00-5 5v6c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z"/></svg></span>
+                <span class="label-text">Smart nutrition guidance</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn">Reserve My Spot</button>
+          <p style="text-align:center;font-size:12px;color:var(--sub);margin-top:14px">No credit card required. No spam. Cancel anytime.</p>
+        </form>
+      </div>
+
+      <div class="form-success" id="ea-success">
+        <div class="check">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>You're on the list!</h3>
+        <p>Welcome to the VTRX founding community.<br/>We'll email you the moment early access opens.<br/><br/>In the meantime, try our interactive demo below.</p>
+        <a href="https://vtrxapp.vercel.app/?demo=1" target="_blank" style="display:inline-block;margin-top:20px;padding:14px 32px;background:var(--primary);color:#fff;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;">Try the Demo</a>
+      </div>
+    </div>
+
+    <!-- FEEDBACK FORM -->
+    <div class="form-card" id="tab-feedback">
+      <h3>Share Your Feedback</h3>
+      <p class="sub">Tried the demo? Have thoughts on the concept? We read every single response. Your input shapes the product.</p>
+
+      <div id="feedback-form-content">
+        <form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitFeedback(event)">
+          <input type="hidden" name="form-name" value="feedback"/>
+          <p style="display:none"><input name="bot-field"/></p>
+          <div class="field-row">
+            <div class="field">
+              <label>YOUR NAME</label>
+              <input type="text" name="name" placeholder="First name" autocomplete="name"/>
+            </div>
+            <div class="field">
+              <label>EMAIL</label>
+              <input type="email" name="email" placeholder="For follow-up (optional)" autocomplete="email"/>
+            </div>
+          </div>
+          <div class="field">
+            <label>HAVE YOU TRIED THE DEMO?</label>
+            <select name="tried-demo">
+              <option value="" disabled selected>Select an option</option>
+              <option>Yes — I tried it</option>
+              <option>No — haven't yet</option>
+              <option>Partially</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>HOW WOULD YOU RATE THE CONCEPT? (1 = Poor, 5 = Excellent)</label>
+            <div class="rating-row">
+              <button type="button" class="rating-btn" onclick="setRating(1)">1</button>
+              <button type="button" class="rating-btn" onclick="setRating(2)">2</button>
+              <button type="button" class="rating-btn" onclick="setRating(3)">3</button>
+              <button type="button" class="rating-btn" onclick="setRating(4)">4</button>
+              <button type="button" class="rating-btn" onclick="setRating(5)">5</button>
+            </div>
+            <input type="hidden" name="rating" id="rating-hidden" value=""/>
+          </div>
+          <div class="field">
+            <label>WHAT DID YOU LIKE MOST?</label>
+            <textarea name="liked" placeholder="e.g. The AI plan, the workout design, the UI..."></textarea>
+          </div>
+          <div class="field">
+            <label>WHAT CONFUSED OR FRUSTRATED YOU?</label>
+            <textarea name="confused" placeholder="e.g. I couldn't find the... / The onboarding was too long..."></textarea>
+          </div>
+          <div class="field">
+            <label>WOULD YOU PAY TO USE VTRX? IF NOT, WHY?</label>
+            <textarea name="would-pay" placeholder="Be honest — this helps us more than anything else."></textarea>
+          </div>
+          <div class="field">
+            <label>ANYTHING ELSE YOU'D LIKE US TO KNOW?</label>
+            <textarea name="other" placeholder="Feature ideas, concerns, comparisons to other apps..."></textarea>
+          </div>
+          <div class="field">
+            <label>CAN WE FOLLOW UP WITH YOU FOR A 15-MIN CALL?</label>
+            <select name="follow-up">
+              <option value="" disabled selected>Select an option</option>
+              <option>Yes — happy to jump on a call</option>
+              <option>Maybe — email me first</option>
+              <option>No — prefer to stay anonymous</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+      </div>
+
+      <div class="form-success" id="fb-success">
+        <div class="check">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Thank you so much!</h3>
+        <p>We read every single response personally.<br/>Your feedback will directly shape what we build next.<br/><br/>If you left your email, expect to hear from us soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="final-cta reveal">
+      <h2>Ready to Unlock Your Potential?</h2>
+      <p>Join the waitlist today. Our first 200 founding members get priority access, $6.49/month founding pricing, and a say in what we build next.</p>
+      <div class="cta-buttons">
+        <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+        <a href="https://vtrxapp.vercel.app/?demo=1" class="btn-secondary" target="_blank">Try the Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <p class="section-label reveal">COMMON QUESTIONS</p>
+    <h2 class="reveal">Still Deciding?</h2>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <h3>Do I need a credit card for the 30-day free trial?</h3>
+        <p>You'll add a card to start your trial, but you won't be charged for 30 days. Cancel anytime before then and you pay nothing.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h3>Can I cancel anytime?</h3>
+        <p>Yes — cancel from Account Settings whenever you like, even during the free trial. You'll keep access until the end of your current billing period.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h3>Will this work if I've never lifted before?</h3>
+        <p>Yes. VTRX is built for beginners — your plan starts from the basics and adjusts as your fitness level improves.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h3>What happens if I miss a workout?</h3>
+        <p>Streak Freeze protects your progress if you miss a day — no judgment, no starting your streak over.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h3>Can I use VTRX at home, or do I need a gym?</h3>
+        <p>Both — set your available equipment (gym, dumbbells, or bodyweight only) and your plan is built around it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">
+      <svg width="22" height="19" viewBox="0 0 100 85" fill="none">
+        <polygon points="50,28 72,0 100,0 50,60 0,0 28,0" fill="#00A3FF"/>
+        <polygon points="50,55 65,35 80,35 50,75 20,35 35,35" fill="#00A3FF" opacity="0.6"/>
+      </svg>
+      <span>VTRX</span>
+    </div>
+    <p>© 2026 VTRX. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Hero waitlist form ──────────────────────────────────────────────────
+    function handleSignup(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalLabel = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Joining...';
+      const data = new FormData(form);
+      fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams(data).toString() })
+        .then((res) => {
+          if (!res.ok) throw new Error('Submission failed');
+          document.querySelector('.waitlist-form').style.display = 'none';
+          document.querySelector('.form-note').style.display = 'none';
+          document.getElementById('success-msg').style.display = 'block';
+          // This submission is real, so bumping the displayed count by 1 here
+          // (rather than waiting for the next fetch) stays accurate.
+          const countEl = document.getElementById('waitlist-count-msg');
+          const match = countEl.textContent.match(/^([\d,]+)/);
+          if (match) {
+            const next = parseInt(match[1].replace(/,/g, ''), 10) + 1;
+            countEl.textContent = next.toLocaleString() + (next === 1 ? ' person has' : ' people have') + ' already joined the waitlist';
+            countEl.style.display = 'block';
+          }
+        })
+        .catch(() => {
+          btn.disabled = false; btn.textContent = originalLabel;
+          alert('Something went wrong submitting that — please try again in a moment.');
+        });
+    }
+
+    // ── Tab switching ────────────────────────────────────────────────────────
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach((b,i) => {
+        b.classList.toggle('active', (i===0&&tab==='early-access')||(i===1&&tab==='feedback'));
+      });
+      document.getElementById('tab-early-access').classList.toggle('active', tab==='early-access');
+      document.getElementById('tab-feedback').classList.toggle('active', tab==='feedback');
+    }
+
+    // ── Star rating ─────────────────────────────────────────────────────────
+    let selectedRating = 0;
+    function setRating(n) {
+      selectedRating = n;
+      document.querySelectorAll('.rating-btn').forEach((b,i) => {
+        b.classList.toggle('selected', i < n);
+      });
+      const h = document.getElementById('rating-hidden');
+      if (h) h.value = n;
+    }
+
+    // ── Early Access submit ──────────────────────────────────────────────────
+    function submitEarlyAccess(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('[name="email"]').value.trim();
+      if (!email) { alert('Please enter your email address.'); return; }
+      const btn = form.querySelector('.submit-btn');
+      const originalLabel = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Submitting...';
+      const data = new FormData(form);
+      fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams(data).toString() })
+        .then((res) => {
+          if (!res.ok) throw new Error('Submission failed');
+          document.getElementById('early-form-content').style.display = 'none';
+          document.getElementById('ea-success').style.display = 'block';
+        })
+        .catch(() => {
+          btn.disabled = false; btn.textContent = originalLabel;
+          alert('Something went wrong submitting that — please try again in a moment.');
+        });
+    }
+
+    // ── Feedback submit ──────────────────────────────────────────────────────
+    function submitFeedback(e) {
+      e.preventDefault();
+      const form = e.target;
+      if (!selectedRating && !form.querySelector('[name="liked"]').value && !form.querySelector('[name="confused"]').value) {
+        alert('Please fill in at least one feedback field.'); return;
+      }
+      // Set rating hidden field
+      document.getElementById('rating-hidden').value = selectedRating || 'Not rated';
+      const btn = form.querySelector('.submit-btn');
+      const originalLabel = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Submitting...';
+      const data = new FormData(form);
+      fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams(data).toString() })
+        .then((res) => {
+          if (!res.ok) throw new Error('Submission failed');
+          document.getElementById('feedback-form-content').style.display = 'none';
+          document.getElementById('fb-success').style.display = 'block';
+        })
+        .catch(() => {
+          btn.disabled = false; btn.textContent = originalLabel;
+          alert('Something went wrong submitting that — please try again in a moment.');
+        });
+    }
+
+    // ── Scroll reveal ─────────────────────────────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          e.target.querySelectorAll('.step, .feature, .why-card, .faq-item').forEach((el, i) => {
+            el.style.transitionDelay = (i * 0.1) + 's';
+          });
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal, .steps, .features, .why-grid').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ── Nav "Join Waitlist" — scroll to the hero form and focus the email field,
+    // since the form sits inside the hero visitors already start on, a plain
+    // scroll can land with nothing visibly changing.
+    function focusWaitlist(e) {
+      e.preventDefault();
+      const target = document.getElementById('waitlist');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const input = document.getElementById('email-input');
+        if (input) input.focus();
+      }, 400);
+    }
+
+    // ── Real waitlist count, read from the actual Netlify Forms submission
+    // count via a serverless function (see waitlist-count.js) — no function
+    // deployed yet, or it errors → show nothing, never a placeholder number.
+    fetch('/.netlify/functions/waitlist-count')
+      .then(res => { if (!res.ok) throw new Error('bad response'); return res.json(); })
+      .then(data => {
+        if (typeof data.count === 'number') {
+          const el = document.getElementById('waitlist-count-msg');
+          el.textContent = data.count.toLocaleString() + (data.count === 1 ? ' person has' : ' people have') + ' already joined the waitlist';
+          el.style.display = 'block';
+        }
+      })
+      .catch(() => {});
+
+    // ── Smooth scroll (skips links like "Join Waitlist" above that already
+    // handle their own click) ──────────────────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      if (a.hasAttribute('onclick')) return;
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
